@@ -24,7 +24,7 @@ EVENTS_TO_IGNORE = {
     "response.content_part.done",
     "conversation.item.created",
     "response.audio.done",
-    "session.created",
+    # "session.created",
     "session.updated",
     "response.done",
     "response.output_item.done",
@@ -258,6 +258,8 @@ class OpenAIVoiceReactAgent(BaseModel):
                         print("model:", data["transcript"])
                     elif t == "conversation.item.input_audio_transcription.completed":
                         print("user:", data["transcript"])
+                    elif t == "session.created":
+                        print("session.created:",data["session"])
                     elif t in EVENTS_TO_IGNORE:
                         pass
                     else:
