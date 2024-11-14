@@ -1,3 +1,5 @@
+from dotenv import load_dotenv
+load_dotenv('.env')
 import uvicorn
 from starlette.applications import Starlette
 from starlette.responses import HTMLResponse
